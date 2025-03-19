@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductoRequest;
+use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -22,15 +24,17 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        $categorias= Categoria::latest()->get();
+        return view('productos.create',compact('categorias'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductoRequest $request)
     {
-        //
+        Producto::created($request ->validated());
+        return redirect()->route('producto.index');
     }
 
     /**

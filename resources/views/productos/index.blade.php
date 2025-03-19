@@ -26,4 +26,6 @@
 
     @endforeach
     </div>
+
+    <a href="{{route('producto.create')}}">Añadir un nuevo producto</a>
 @endsection
