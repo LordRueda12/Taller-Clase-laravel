@@ -33,7 +33,7 @@ class ProductoController extends Controller
      */
     public function store(ProductoRequest $request)
     {
-        Producto::created($request ->validated());
+        Producto::create($request ->validated());
         return redirect()->route('producto.index');
     }
 
@@ -66,6 +66,7 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
+        return redirect()->route('producto.index');
     }
 }

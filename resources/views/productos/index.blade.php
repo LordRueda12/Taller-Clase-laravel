@@ -15,7 +15,7 @@
             <a href=""> 
                 <button title="editar producto">🖋️</button>
             </a>
-            <form action="" method="POST">
+            <form action="{{route('producto.delete',$producto)}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button title="Eliminar producto">🗑️</button>
