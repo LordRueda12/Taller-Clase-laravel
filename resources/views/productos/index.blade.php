@@ -11,8 +11,8 @@
         <span class="precio">{{$producto->precio}}</span>
         <button title="añadir al carrito" class="agregar-compra">🛒</button>
         <div class="detalles">
-            <a href=""> ver detalles</a>
-            <a href=""> 
+            <a href="{{route('producto.show',$producto)}}"> ver detalles</a>
+            <a href="{{route('producto.edit',$producto)}}"> 
                 <button title="editar producto">🖋️</button>
             </a>
             <form action="{{route('producto.delete',$producto)}}" method="POST">

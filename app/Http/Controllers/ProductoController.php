@@ -42,7 +42,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return view('productos.show',compact('producto'));
     }
 
     /**
@@ -50,15 +50,17 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        //
+        $categorias= Categoria::latest()->get();
+        return view('productos.edit',compact('producto','categorias'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Producto $producto)
+    public function update(ProductoRequest $request, Producto $producto)
     {
-        //
+        $producto->update($request->validated());
+        return redirect()->route('producto.show',$producto);
     }
 
     /**

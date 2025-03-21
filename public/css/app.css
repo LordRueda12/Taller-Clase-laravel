@@ -147,3 +147,98 @@ button {
 button:hover {
     background: #218838;
 }
+
+
+.producto_detalle {
+    max-width: 370px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.producto_detalle img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.producto_detalle h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.producto_detalle p {
+    font-size: 1em;
+    color: #555;
+}
+
+.stock {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.Categoria {
+    font-style: italic;
+    color: #888;
+}
+
+.comprar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.precio {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.agregar-compra {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.agregar-compra:hover {
+    background-color: #c0392b;
+}
+
+.detalles {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.actions button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.actions button:hover {
+    background-color: #2980b9;
+}
+
+.actions form button {
+    background-color: #e74c3c;
+}
+
+.actions form button:hover {
+    background-color: #c0392b;
+}
