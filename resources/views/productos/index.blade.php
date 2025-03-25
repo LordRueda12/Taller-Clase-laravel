@@ -3,6 +3,16 @@
 @section('title','Productos')
     
 @section('content')
+<form method="GET" action="{{route('producto.index')}} " class="filtrar-productos">
+    <label for="categoria">filtrar por categoria</label>
+    <select name="categoria" id="categoria" onchange="this.form.submit()">
+        <option value="">Todas</option>
+        @foreach($categorias as $categoria)
+        <option value="{{$categoria->id}}" {{request('categoria')== $categoria->id ? 'selected' : ''}}>{{$categoria->nombre}}</option>
+        @endforeach
+    </select>
+</form>
+
 <div class="productos">
     @foreach($productos as $producto)
     <div class="producto">
@@ -27,5 +37,5 @@
     @endforeach
     </div>
 
-    <a href="{{route('producto.create')}}">Añadir un nuevo producto</a>
+    <a class="nav-bar" href="{{route('producto.create')}}">Añadir un nuevo producto</a>
 @endsection

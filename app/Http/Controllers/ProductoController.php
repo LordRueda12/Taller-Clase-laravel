@@ -12,11 +12,15 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $productos=Producto::all();
-        return view('productos.index',compact('productos'));
+        $categorias=Categoria::all();
+        
+        $productos = Producto::when($request->categoria,function($query,$categoriaId){
+            return $query->where('categoria_id',$categoriaId);
+        })->get();
+        return view('productos.index',compact('productos','categorias'));
     }
 
     /**
