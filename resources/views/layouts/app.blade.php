@@ -13,7 +13,9 @@
             <a href="{{route('producto.index') }}">
                 Productos
             </a>
-          
+            <a href="{{route('categoria.index') }}">
+                Categorias
+            </a>
         </nav>
 
     </header>

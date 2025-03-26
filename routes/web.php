@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
+use Monolog\Handler\RotatingFileHandler;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +21,13 @@ Route::delete('/producto/{producto}',[productoController::class,'destroy'])->nam
 Route::get('/producto/editar/{producto}/',[productoController::class,'edit'])->name('producto.edit');
 
 Route::patch('/producto/{producto}',[productoController::class,'update'])->name('producto.update');
+
+Route::get('/categorias',[CategoriaController::class,'index'])->name('categoria.index');
+
+Route::post('/categoria/store',[CategoriaController::class,'store'])->name('categoria.store');
+
+Route::get('/categoria/edit/{categoria}',[CategoriaController::class,'edit'])->name('categoria.edit');
+
+Route::delete('/categoria/{categoria}',[CategoriaController::class,'destroy'])->name('categoria.delete');
+
+Route::patch('/categoria/{categoria}',[categoriaController::class,'update'])->name('categoria.update');
