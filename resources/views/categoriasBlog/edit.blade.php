@@ -13,12 +13,12 @@
     </thead>
     <tbody>
 
-        <form method="POST" action="{{route('categoria.update',$categoria)}}">
+        <form method="POST" action="{{route('categoria.update',$categoriaBlog)}}">
             <tr>
                 @csrf
                 @method('PATCH')
-                <td><input value="{{old ('nombre', $categoria['nombre'])}}" type="text" name="nombre" id="nombre" placeholder="nombre"></td>
-                <td><input value="{{old ('descripcion', $categoria['descripcion'])}}" type="text" name="descripcion" id="descripcion" placeholder="descripcion"></td>
+                <td><input value="{{old ('nombre', $categoriaBlog['nombre'])}}" type="text" name="nombre" id="nombre" placeholder="nombre"></td>
+                <td><input value="{{old ('descripcion', $categoriaBlog['descripcion'])}}" type="text" name="descripcion" id="descripcion" placeholder="descripcion"></td>
                 <td>
                     <button title="Guardar ediciones">✅</button>
                     <a href="{{route('categoria.index')}}">

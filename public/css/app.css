@@ -19,26 +19,112 @@
     padding: 20px;
 }
 nav {
-    font-size: 24px;
+    font-size: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background: #cfa8a8; /* Un tono más refinado */
-    padding: 15px 30px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    justify-content: center;
+    gap: 10px;
+    background: #e0b4b4; /* Un color más suave y elegante */
+    padding: 12px 21px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    
 }
-
+nav li {
+    list-style: none;
+    
+}
 nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s ease-in-out;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: #6d1414; /* Color más oscuro al pasar el cursor */
+    background: #d19090;
+    color: white;
+}
+
+nav .active {
+    background: #b76565;
+    color: white;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #f8f8f8; /* Fondo claro y moderno */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: #e0e0e0; /* Color neutro */
+    border: 1px solid #d1d1d1;
+}
+
+.pagination a:hover {
+    background: #c05757;
+    color: white;
+    border-color: #a04a4a;
+}
+
+.pagination .active {
+    background: #b73d3d;
+    color: white;
+    pointer-events: none;
+    border-color: #922f2f;
+}
+
+
+.pagination .prev,
+.pagination .next {
+    font-weight: bold;
+    padding: 8px 16px;
+}
+
+.pagination .prev:hover,
+.pagination .next:hover {
+    background: #c05757;
+}
+
+
+@media (max-width: 600px) {
+    .pagination {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}
+.nuevo-articulo{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #e0b4b4; 
+    padding: 12px 21px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
 }
 .nav-bar {
     font-size: 24px;
@@ -282,3 +368,212 @@ button:hover {
 .actions form button:hover {
     background-color: #c0392b;
 }
+
+
+/* Estilos de las categorias  */
+
+.categorias {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.categorias th, .categorias td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.categorias thead {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.categorias tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.categorias tbody tr:hover {
+    background-color: #e6e6e6;
+}
+
+.categorias input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.categorias button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.categorias button:hover {
+    background-color: #0056b3;
+}
+
+.categorias form {
+    display: inline;
+    margin: 0;
+}
+
+.articulo_nuevo {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.articulo_nuevo fieldset {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.articulo_nuevo legend {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.articulo_nuevo input,
+.articulo_nuevo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+.articulo_nuevo input:focus,
+.articulo_nuevo select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.articulo_nuevo button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.articulo_nuevo button:hover {
+    background: #0056b3;
+}
+
+/* ESTILOS EDITAR LEER */
+
+
+.articulo {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #b73d3d;
+    transition: transform 0.2s ease-in-out;
+}
+
+.articulo:hover {
+    transform: translateY(-3px);
+}
+
+
+.articulo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.articulo .autor, 
+.articulo .categoria, 
+.articulo .fecha-publicacion {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+
+.articulo .contenido {
+    font-size: 16px;
+    color: #444;
+    margin: 15px 0;
+}
+
+
+.articulo img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+.articulo .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center; /* Alinea verticalmente los botones */
+}
+
+
+.articulo .actions button {
+    background: #b73d3d;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+
+.articulo .actions button:hover {
+    background: #922f2f;
+}
+
+
+@media (max-width: 600px) {
+    .articulo {
+        padding: 15px;
+    }
+    
+    .articulo h2 {
+        font-size: 20px;
+    }
+    
+    .articulo .contenido {
+        font-size: 14px;
+    }
+    
+    .articulo .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+

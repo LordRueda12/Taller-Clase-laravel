@@ -16,6 +16,12 @@
             <a href="{{route('categoria.index') }}">
                 Categorias
             </a>
+            <a href="{{route('articulo.index') }}">
+                Articulos 
+            </a>
+            <a href="{{route('categoriaBlog.index') }}">
+                Categorias Blog  
+            </a>
         </nav>
 
     </header>
