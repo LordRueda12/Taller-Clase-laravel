@@ -7,23 +7,23 @@
 <form method="POST" action="{{route('articulo.store')}}" class="articulo_nuevo">
     @csrf
     <fieldset>
-        <legend>Url de la imagen  del articulo</legend>
+        <legend>{{__('messages.urlOfTheImage')}}</legend>
         <input type="url" name="imagen_destacada" id="url">
     </fieldset>
     <fieldset>
-        <legend>Titulo del articulo</legend>
+        <legend>{{__('messages.tittleOfTheArticle')}}</legend>
         <input type="text" name="titulo" id="titulo">
     </fieldset>
     <fieldset>
-        <legend>Contenido del articulo</legend>
+        <legend>{{__('messages.contentOfTheArticle')}}</legend>
         <input type="text" name="contenido" id="contenido">
     </fieldset>
     <fieldset>
-        <legend>Autor </legend>
+        <legend>{{__('messages.autor')}} </legend>
         <input type="text" name="autor" id="autor">
     </fieldset>
     <fieldset>
-        <legend>Categoria del blog</legend>
+        <legend>{{__('messages.blogCategory')}}</legend>
         <select type="text" name="categoria_blog_id" id="categoria_blog_id" autocomplete="off">
         <option value="null" selected disabled hidden>Categoria del blog</option>
         @foreach($categoriasBlog as $categoriaBlog)
@@ -32,10 +32,10 @@
         </select>
     </fieldset>
     <fieldset>
-        <legend>Fecha de publicacion</legend>
+        <legend>{{__('messages.dateOfPublish')}}  </legend>
         <input type="date" name="fecha_publicacion" id="fecha_publicacion">
     </fieldset>
-    <button>Publicar articulo</button>
+    <button>{{__('messages.publishArticle')}}</button>
 </form>
 
 

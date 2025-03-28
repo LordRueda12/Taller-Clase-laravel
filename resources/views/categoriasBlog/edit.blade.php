@@ -6,9 +6,9 @@
 <table class="categorias">
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Acciones</th>
+            <th>{{__('messages.name')}}</th>
+            <th>{{__('messages.description')}}</th>
+            <th>{{__('messages.actions')}}</th>
         </tr>
     </thead>
     <tbody>
@@ -17,12 +17,12 @@
             <tr>
                 @csrf
                 @method('PATCH')
-                <td><input value="{{old ('nombre', $categoriaBlog['nombre'])}}" type="text" name="nombre" id="nombre" placeholder="nombre"></td>
-                <td><input value="{{old ('descripcion', $categoriaBlog['descripcion'])}}" type="text" name="descripcion" id="descripcion" placeholder="descripcion"></td>
+                <td><input value="{{old ('nombre', $categoriaBlog['nombre'])}}" type="text" name="nombre" id="nombre" placeholder="{{__('messages.name')}}"></td>
+                <td><input value="{{old ('descripcion', $categoriaBlog['descripcion'])}}" type="text" name="descripcion" id="descripcion" placeholder="{{__('messages.description')}}"></td>
                 <td>
-                    <button title="Guardar ediciones">✅</button>
+                    <button title="{{__('messages.saveChanges')}}">✅</button>
                     <a href="{{route('categoria.index')}}">
-                        <button type="button" title="Cancelar ediciones">❌</button>
+                        <button type="button" title="{{__('messages.deleteChanges')}}">❌</button>
                     </a>
                 </td>
             </tr>

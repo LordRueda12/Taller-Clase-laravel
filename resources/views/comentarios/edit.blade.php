@@ -8,20 +8,20 @@
     @method('PATCH')
     <input type="hidden" name="articulo_id" value="{{$comentario->articulo_id}}">
     <fieldset>
-        <legend>Nombre del usuario</legend>
+        <legend>{{__('messages.userName')}}</legend>
         <input type="text" name="nombre_usuario" value="{{old('nombre_usuario',$comentario['nombre_usuario'])}}" placeholder="Tu nombre" name="nombre_usuario" id="nombre_usuario" required>
     </fieldset>
 
     <fieldset>
-        <legend>Email del usuario</legend>
+        <legend>{{__('messages.email')}}</legend>
         <input type="email" name="email" id="email" value="{{old('email',$comentario['email'])}}" placeholder="Tu email" autocomplete="off">
     </fieldset>
 
     <fieldset>
-        <legend>Contenido del comentario</legend>
+        <legend>{{__('messages.comentContent')}}</legend>
         <textarea name="contenido" id="contenido"  placeholder="Escribe tu comentario" required>{{old('contenido',$comentario['contenido'])}}</textarea>
     </fieldset>
-    <button>Guardar Ediciones</button>
+    <button>{{__('messages.saveChanges')}}</button>
     
 </form>
 

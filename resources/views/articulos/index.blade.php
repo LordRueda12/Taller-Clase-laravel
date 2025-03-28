@@ -12,23 +12,23 @@
                 <a href="{{route('articulo.show',$articulo)}}">Leer</a>
                 <div class="actions">
                     <a href="{{route('articulo.edit',$articulo)}}">
-                        <button title="Editar articulo">🖋️</button>
+                        <button title="{{__('messages.editArticle')}}">🖋️</button>
                     </a>
                     <form action="{{route('articulo.delete',$articulo)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button title="Eliminar articulo">🗑️</button>
+                        <button title="{{__('messages.deleteArticle')}}">🗑️</button>
                     </form>
                 </div>
             </div>
         </article>
     @empty
-        <li>No hay articulos para mostar</li>
+        <li>{{__('messages.thereIsNotArticleToShow')}}</li>
     @endforelse
     {{$articulos->links('pagination::bootstrap-4')}}
 </div>
 <br>
 <div class="nuevo-articulo">
-    <a href="{{route('articulo.create')}}">Añadir un nuevo articulo</a>
+    <a href="{{route('articulo.create')}}">{{__('messages.addArticle')}}</a>
 </div>
 @endsection

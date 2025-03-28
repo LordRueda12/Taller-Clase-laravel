@@ -12,12 +12,12 @@
     <img title="imagen-destacada" src="{{$articulo->imagen_destacada}}" alt="">
     <div class="actions">
         <a href="{{route('articulo.edit',$articulo)}}">
-            <button title="Editar articulo">🖋️</button>
+            <button title="{{__('messages.editArticle')}}">🖋️</button>
         </a>
         <form action="{{route('articulo.delete',$articulo)}}" method="POST">
             @csrf
             @method('DELETE')
-            <button title="Eliminar articulo">🗑️</button>
+            <button title="{{__('messages.deleteArticle')}}">🗑️</button>
         </form>
     </div>
     <div class="comentario">
@@ -29,18 +29,18 @@
         <p class="contenido">{{$comentario->contenido}}</p>
         <div class="acciones">
             <a href="{{route('comentario.edit',$comentario)}}">
-                <button title="Editar comentario">🖋️</button>
+                <button title="{{__('messages.editComent')}}">🖋️</button>
             </a>
             <form action="{{route('comentario.delete',$comentario)}}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button title="Eliminar comentario">🗑️</button>
+                <button title="{{__('messages.deleteComent')}}">🗑️</button>
             </form>
         </div>
     </div>
     @endforeach 
     <div class="nuevo-comentario">
-        <h3>Deja un comentario</h3>
+        <h3>{{__('messages.addComent')}}</h3>
         <form action="{{route('comentario.store',$articulo)}}" method="POST">
             @csrf
             <input type="hidden" name="articulo_id" value="{{$articulo->id}}">
