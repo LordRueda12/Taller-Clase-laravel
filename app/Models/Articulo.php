@@ -21,4 +21,10 @@ class Articulo extends Model
     {
         return $this->belongsTo(CategoriaBlog::class);
     }
+
+
+    public function Comentarios()
+    {
+        return $this->hasMany(Comentario::class);
+    }
 }

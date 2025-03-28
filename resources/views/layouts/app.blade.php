@@ -11,16 +11,16 @@
     <header>
         <nav>
             <a href="{{route('producto.index') }}">
-                Productos
+                {{__('messages.products')}}
             </a>
             <a href="{{route('categoria.index') }}">
-                Categorias
+                {{__('messages.categories')}}
             </a>
             <a href="{{route('articulo.index') }}">
-                Articulos 
+                {{__('messages.articles')}}
             </a>
             <a href="{{route('categoriaBlog.index') }}">
-                Categorias Blog  
+                {{__('messages.blogCategories')}}
             </a>
         </nav>
 

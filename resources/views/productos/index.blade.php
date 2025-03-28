@@ -4,9 +4,9 @@
     
 @section('content')
 <form method="GET" action="{{route('producto.index')}} " class="filtrar-productos">
-    <label for="categoria">filtrar por categoria</label>
+    <label for="categoria">{{__('messages.filterByCategory')}}</label>
     <select name="categoria" id="categoria" onchange="this.form.submit()">
-        <option value="">Todas</option>
+        <option value="">{{__('messages.all')}}</option>
         @foreach($categorias as $categoria)
         <option value="{{$categoria->id}}" {{request('categoria')== $categoria->id ? 'selected' : ''}}>{{$categoria->nombre}}</option>
         @endforeach
@@ -19,16 +19,16 @@
         <img src="{{$producto->imagen}}" alt="">
         <h2>{{$producto->nombre}}</h2>
         <span class="precio">{{$producto->precio}}</span>
-        <button title="añadir al carrito" class="agregar-compra">🛒</button>
+        <button title="{{__('messages.addToCart')}}" class="agregar-compra">🛒</button>
         <div class="detalles">
-            <a href="{{route('producto.show',$producto)}}"> ver detalles</a>
+            <a href="{{route('producto.show',$producto)}}"> {{__('messages.seeDetails')}}</a>
             <a href="{{route('producto.edit',$producto)}}"> 
-                <button title="editar producto">🖋️</button>
+                <button title="{{__('messages.editProduct')}}" >🖋️</button>
             </a>
             <form action="{{route('producto.delete',$producto)}}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button title="Eliminar producto">🗑️</button>
+                <button title="{{__('messages.deleteProduct')}}" >🗑️</button>
             </form>
         </div>
     </div>
@@ -37,5 +37,5 @@
     @endforeach
     </div>
 
-    <a class="nav-bar" href="{{route('producto.create')}}">Añadir un nuevo producto</a>
+    <a class="nav-bar" href="{{route('producto.create')}}">{{__('messages.addNewProduct')}}</a>
 @endsection

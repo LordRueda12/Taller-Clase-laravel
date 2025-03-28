@@ -3,7 +3,9 @@
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\CategoriaBlogController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ProductoController;
+use App\Models\Comentario;
 use Illuminate\Support\Facades\Route;
 use Monolog\Handler\RotatingFileHandler;
 
@@ -57,4 +59,12 @@ Route::get('/categoriaBlog/edit/{categoriaBlog}',[CategoriaBlogController::class
 Route::delete('/categoriaBlog/{categoriaBlog}',[CategoriaBlogController::class,'destroy'])->name('categoriaBlog.delete');
 
 Route::patch('/categoriaBlog/{categoriaBlog}',[CategoriaBlogController::class,'update'])->name('categoriaBlog.update');
+
+Route::post('/comentario/store',[ComentarioController::class,'store'])->name('comentario.store');
+
+Route::get('/comentario/editar/{comentario}/',[ComentarioController::class,'edit'])->name('comentario.edit');
+
+Route::delete('/comentario/{comentario}',[ComentarioController::class,'destroy'])->name('comentario.delete');
+
+Route::patch('/comentario/{comentario}',[ComentarioController::class,'update'])->name('comentario.update');
 
