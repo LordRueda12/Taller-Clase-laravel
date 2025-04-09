@@ -10,6 +10,7 @@
             <p>{{ $articulo->categoriaBlog->nombre }}</p>
             <div class="detalles">
                 <a href="{{route('articulo.show',$articulo)}}">Leer</a>
+                @auth
                 <div class="actions">
                     <a href="{{route('articulo.edit',$articulo)}}">
                         <button title="{{__('messages.editArticle')}}">🖋️</button>
@@ -20,7 +21,9 @@
                         <button title="{{__('messages.deleteArticle')}}">🗑️</button>
                     </form>
                 </div>
+                @endauth
             </div>
+
         </article>
     @empty
         <li>{{__('messages.thereIsNotArticleToShow')}}</li>
@@ -28,7 +31,9 @@
     {{$articulos->links('pagination::bootstrap-4')}}
 </div>
 <br>
+@auth
 <div class="nuevo-articulo">
     <a href="{{route('articulo.create')}}">{{__('messages.addArticle')}}</a>
 </div>
+@endauth
 @endsection

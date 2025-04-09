@@ -22,6 +22,7 @@
         <button title="{{__('messages.addToCart')}}" class="agregar-compra">🛒</button>
         <div class="detalles">
             <a href="{{route('producto.show',$producto)}}"> {{__('messages.seeDetails')}}</a>
+            @auth
             <a href="{{route('producto.edit',$producto)}}"> 
                 <button title="{{__('messages.editProduct')}}" >🖋️</button>
             </a>
@@ -30,12 +31,14 @@
                 @method('DELETE')
                 <button title="{{__('messages.deleteProduct')}}" >🗑️</button>
             </form>
+            @endauth
         </div>
     </div>
 
 
     @endforeach
     </div>
-
+@auth
     <a class="nav-bar" href="{{route('producto.create')}}">{{__('messages.addNewProduct')}}</a>
+    @endauth
 @endsection

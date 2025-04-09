@@ -39,6 +39,9 @@ return[
     'userName'=>'User name',
     'email'=>'email',
     'comentContent'=>'Coment content',
+    'logOut'=>'Log out',
+    'logIn'=>'Log in',
+    'register'=>'Register',
 
 
 ];

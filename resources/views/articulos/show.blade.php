@@ -10,6 +10,7 @@
     <p class="contenido">{{$articulo->contenido}}</p>
     <p class="fecha-publicacion">{{$articulo->fecha_publicacion}}</p>
     <img title="imagen-destacada" src="{{$articulo->imagen_destacada}}" alt="">
+    @auth
     <div class="actions">
         <a href="{{route('articulo.edit',$articulo)}}">
             <button title="{{__('messages.editArticle')}}">🖋️</button>
@@ -20,6 +21,7 @@
             <button title="{{__('messages.deleteArticle')}}">🗑️</button>
         </form>
     </div>
+    @endauth
     <div class="comentario">
         @foreach($articulo->comentarios as $comentario)
         <div class="comentario">
@@ -27,6 +29,7 @@
             <span class="fecha">{{$comentario->created_at->format('d/m/Y H:i')}}</span>
         </div>
         <p class="contenido">{{$comentario->contenido}}</p>
+        @auth
         <div class="acciones">
             <a href="{{route('comentario.edit',$comentario)}}">
                 <button title="{{__('messages.editComent')}}">🖋️</button>
@@ -37,8 +40,10 @@
                 <button title="{{__('messages.deleteComent')}}">🗑️</button>
             </form>
         </div>
+        @endauth
     </div>
     @endforeach 
+    @auth
     <div class="nuevo-comentario">
         <h3>{{__('messages.addComent')}}</h3>
         <form action="{{route('comentario.store',$articulo)}}" method="POST">
@@ -50,5 +55,6 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
+    @endauth
 </div>
 @endsection
